@@ -1,4 +1,4 @@
-# spark-launcher-superviser
+# spark-launcher-supervisor
 A Java agent that oversees a Spark launcher and checks/enforces settings
 
 This is a quick PoC of a JVM agent that is aimed to be globally installed on edge nodes
