@@ -4,7 +4,7 @@ A Java agent that oversees a Spark launcher and checks/enforces settings
 This is a quick PoC of a JVM agent that is aimed to be globally installed on edge nodes
 to make sure Spark jobs are submitted with correct settings.
 
-The current version of agent simply checks two Spark settings:
+The current version of agent simply checks the following Spark settings and prints a warning message to the console if they don't match the expected values:
 1. `master` to be `yarn`
 2. `deploy-mode` to be `cluster`
 
