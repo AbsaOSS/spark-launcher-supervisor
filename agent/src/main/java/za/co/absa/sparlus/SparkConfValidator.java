@@ -1,6 +1,7 @@
 package za.co.absa.sparlus;
 
 import org.apache.spark.SparkConf;
+import scala.Tuple2;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,14 @@ public class SparkConfValidator {
     public static void validate(Object sparkConfObj) {
         final SparkConf sparkConf = (SparkConf) sparkConfObj;
 
+        // print current Spark conf
+        final StringBuilder confDebugStrBuilder = new StringBuilder();
+        for (Tuple2<String, String> tuple : sparkConf.getAll()) {
+            confDebugStrBuilder.append("\n\t").append(tuple._1).append("=").append(tuple._2);
+        }
+        info("Spark Conf:" + confDebugStrBuilder);
+
+        // compare given Spark conf with expected values
         boolean success = true;
         for (Map.Entry<String, String> entry : EXPECTED_CONF_PROPS.entrySet()) {
             final String actual = sparkConf.get(entry.getKey());
