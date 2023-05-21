@@ -8,6 +8,9 @@ The current version of agent simply checks the following Spark settings and prin
 1. `master` to be `yarn`
 2. `deploy-mode` to be `cluster`
 
+## Supported Spark version
+Any
+
 ## Todo:
 - Flexible definition of rules/checks that can be either passed as an agent parameter, config file, or even managed centrally (remotely)
 - Send notifications
